@@ -1,0 +1,111 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load static %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/taganalysis.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/buttons.css' %}" />
+
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<!-- TABLESORTER -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.4.2/b-html5-1.4.2/fh-3.1.3/r-2.2.0/sl-1.2.3/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/b-1.4.2/b-html5-1.4.2/fh-3.1.3/r-2.2.0/sl-1.2.3/datatables.min.js"></script>
+</head>
+
+<body>
+	<div id="main-wrapper-content" class="acrylic shadow">
+		<div id="header">
+			<!-- BUTTONS & HL -->
+			<div id="buttons-wrapper">
+				<div id="home-button">
+					<a role="button" href="/" class="button white">Home</a>
+				</div>
+				<div id="headline">
+					<h1>{{ title }}</h1>
+				</div>
+				<div id="charts-dl-buttons">
+					<a role="button" class="button white" id="ag-button">{{ ag_toggle_text }}</a>
+					<a role="button" class="button green" id="charts-button">Charts</a>
+					<a role="button" class="button orange" id="dl-button">Download</a>
+				</div>
+				<div id="dl-button-wrapper">
+					<a role="button" href="download" class="button orange" id="dl-full">Full Report</a>
+					<a role="button" href="download" class="button orange" id="dl-view">Current View</a>
+					<a role="button" href="download" class="button orange" id="dl-view-data">Raw Data of Current View</a>
+				</div>
+			</div>
+
+			<!-- FILTER BAR -->
+			<div id="filter-bar">
+				<div id="device">
+					<a role="button" class="filter" id="all">All</a>
+					<a role="button" class="filter" id="mobile">Mobile</a>
+					<a role="button" class="filter" id="desktop">Desktop</a>
+					<a role="button" class="filter" id="tablet">Tablet</a>
+				</div>
+
+				<div id="path">
+					<a href="">/</a>
+				</div>
+
+				<div id="matchtype">
+					<a role="button" class="filter" id="all">All</a>
+					<a role="button" class="filter" id="exact">Exact</a>
+					<a role="button" class="filter" id="phrase">Phrase</a>
+					<a role="button" class="filter" id="plus">Plus</a>
+					<a role="button" class="filter" id="broad">Broad</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- DATA -->
+		<div id="data-wrapper">
+			{% csrf_token %}
+			<table id="sorter" class="table tablesorter">
+				<thead>
+					<tr>
+						<th>Tag</th>
+						<th>Impressions</th>
+						<th>Clicks</th>
+						<th>CTR</th>
+						<th>CPC</th>
+						<th>Position</th>
+						<th>Conversions</th>
+						<th>CPL</th>
+						<th>CR</th>
+						<th>Cost</th>
+						<th>QS</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for key, value in data.items %}
+					<tr>
+						<td><a class="tagselect">{{ key }}</a></td>
+						<td>{{ value.Impressions }}</td>
+						<td>{{ value.Clicks }}</td>
+						<td>{{ value.CTR }}</td>
+						<td>{{ value.CPC }}</td>
+						<td>{{ value.AvgPos }}</td>
+						<td>{{ value.Conversions }}</td>
+						<td>{{ value.CPL }}</td>
+						<td>{{ value.CR }}</td>
+						<td>{{ value.Cost }}</td>
+						<td>{{ value.QS }}</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+<!-- JQEUERY INTERACTIVENESS -->
+<script type="text/javascript" src="{% static 'taganalysis/js/interactivity_results.js' %}"></script>

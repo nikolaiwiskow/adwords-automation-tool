@@ -1,0 +1,124 @@
+body, .acrylic::before {
+  background: #333 url("../images/road.jpg") fixed center;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+
+/* HEADLINES */
+#headline {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 8px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 150%;
+}
+
+h3 {
+  text-align: center;
+}
+
+
+/* MAIN WRAPPER ACRYLIC */
+#main-wrapper-content {
+	margin: 0 auto;
+	top: 5vh;
+  width: calc(80vw);
+  height: 90vh;
+	border-radius: 3px;
+	padding: 0px;
+	-webkit-animation: fadeIn 0.22s;
+	animation: fadeIn 0.22s;
+}
+
+
+#header {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* buttons top */
+#buttons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#charts-dl-buttons {
+  text-align: right;
+  width: 25%;
+}
+
+#home-button {
+  width: 25%;
+}
+
+
+
+
+/* wrapper & inline setting for dl +charts buttons */
+#dl-button-wrapper {
+  display: none;
+}
+
+#dl-full, #dl-view, #dl-view-data, #dl-button, #charts-button {
+  display: inline-block;
+}
+
+
+
+
+
+/* FILTER BAR */
+#filter-bar {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#device, #kpis {
+  width: 300px;
+  padding-top: 20px;
+}
+
+#path {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+#matchtype, #charttypes {
+  width: 300px;
+  text-align: right;
+  padding-top: 20px;
+}
+
+.filter {
+  margin-right: 5px;
+  display: inline-block;
+}
+
+
+
+/* DATA */
+#data-wrapper {
+	width: 100%;
+  height: calc(100% - 100px);
+	padding: 20px;
+	overflow: auto;
+	border-top-style: solid;
+	border-width: 1px;
+	border-color: #A19B99;
+  overflow: auto;
+  background-color: white;
+}

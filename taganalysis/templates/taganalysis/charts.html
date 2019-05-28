@@ -1,0 +1,78 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load static %}
+{% csrf_token %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/taganalysis.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/buttons.css' %}" />
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<!-- CHARTS.jS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+	<script>var filtered_data = JSON.parse('{{ filtered_data|escapejs }}');</script>
+</head>
+
+<body>
+	<div id="main-wrapper-content" class="acrylic shadow">
+		<div id="header">
+			<!-- BUTTONS & HEADLINE -->
+			<div id="buttons-wrapper">
+				<div id="home-button">
+					<a role="button" href="/" class="button white">Home</a>
+				</div>
+				<div id="headline">
+					<h1>{{ title }}</h1>
+				</div>
+				<div id="charts-dl-buttons">
+					<a role="button" class="button white" id="ag-button">{{ ag_toggle_text }}</a>
+					<a role="button" class="button green" id="charts-button">Table</a>
+					<a role="button" class="button orange" id="dl-button">Download</a>
+				</div>
+				<div id="dl-button-wrapper">
+					<a role="button" href="download" class="button orange" id="dl-full">Full Report</a>
+					<a role="button" href="download" class="button orange" id="dl-view">Current View</a>
+					<a role="button" href="download" class="button orange" id="dl-view-data">Raw Data of Current View</a>
+				</div>
+			</div>
+
+			<!-- FILTER BAR -->
+			<div id="filter-bar">
+				<div id="kpis">
+					<a role="button" class="filter" id="Cost">Cost</a>
+					<a role="button" class="filter" id="Conversions">Conversions</a>
+					<a role="button" class="filter" id="Clicks">Clicks</a>
+					<a role="button" class="filter" id="Impressions">Impressions</a>
+				</div>
+
+				<div id="path">
+					<a href="">/</a>
+				</div>
+
+				<div id="charttypes">
+					<a role="button" class="filter" id="doughnut">Doughnut</a>
+					<a role="button" class="filter" id="bar">Bars</a>
+					<a role="button" class="filter" id="pie">Pie</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- CHART -->
+		<div id="data-wrapper">
+			<canvas id="myChart"></canvas>
+			<script type="text/javascript" src="{% static 'taganalysis/js/custom_charts.js' %}"></script>
+		</div>
+
+	</div>
+</body>
+
+<!-- JQEUERY INTERACTIVENESS -->
+<script type="text/javascript" src="{% static 'taganalysis/js/interactivity_charts.js' %}"></script>

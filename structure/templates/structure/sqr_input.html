@@ -1,0 +1,73 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+{% load static %}
+
+<head>
+	<!-- Main CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/sqr.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/buttons.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/loading_spinners.css' %}" />
+
+	<!-- Include Required Prerequisites Datepicker-->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+	 
+	<!-- Include Date Range Picker -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+</head>
+
+<body>
+	<div id="main-wrapper-content" class="main-wrapper-content acrylic shadow">
+
+		<div id="buttons-wrapper">
+			<div>
+				<a role="button" href="/" class="button white">Home</a>
+			</div>
+			<div id="headline">
+				<h1>{{ title }}</h1>
+			</div>
+			<div id="build-button">
+				<a role="button" href="buildNewAccount" class="button orange">Build new account</a>
+			</div>
+		</div>
+
+		<div id="form-wrapper">
+			<div id="form">
+				<form id="formla" enctype="multipart/form-data" method="post">
+					{% csrf_token %}
+					{% bootstrap_form form class="sqr" %}
+				</form>
+			</div>
+		</div>
+
+		<div id="form-buttons">
+			<div>
+				<a id="go-button" class="button green" onclick="$('form').trigger('submit');">Next</a>
+			</div>
+		</div>
+
+		<div class="overlay">
+			<div id="loading" class="spinner spinner__3"></div>
+		</div>
+
+	</div>
+</body>
+
+
+
+
+
+
+<!-- Datepicker & JQuery -->
+<script type="text/javascript" src="{% static 'structure/js/datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'structure/js/jquery.js' %}"></script>

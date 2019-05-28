@@ -1,0 +1,50 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% load static %}
+
+<head>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/build.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/buttons.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/loading_spinners.css' %}" />
+
+	<!-- jQuery & Loading Overlay -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div id="main-wrapper-content" class="acrylic shadow">
+
+		<div id="buttons-wrapper">
+			<div>
+				<a role="button" href="/" class="button white">Home</a>
+			</div>
+			<div id="headline">
+				<h1>{{ title }}</h1>
+			</div>
+			<div>
+			</div>
+		</div>
+
+		<div id="form">
+			<form enctype="multipart/form-data" method="post">
+				{% csrf_token %}
+				{% bootstrap_form form %}
+			</form>
+		</div>
+
+		<div id="form-buttons">
+			<a id="go-button" class="button green" onclick="$('form').trigger('submit');">Build</a>
+		</div>	
+	</div>
+</body>

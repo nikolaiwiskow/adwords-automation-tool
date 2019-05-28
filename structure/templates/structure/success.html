@@ -1,0 +1,36 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% load static %}
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/success.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/buttons.css' %}" />
+</head>
+
+<body>
+	<div id="main-wrapper-content" class="acrylic shadow">
+
+			<div id="buttons-wrapper">
+				<div id="home-button">
+					<a role="button" href="/" class="button white">Home</a>
+				</div>		
+			</div>
+			
+			
+			<h1>{{ title }}</h1>		
+			<h3>{{ subtitle }}</h3>
+			<div id="url">
+				<a href="{{ batch_job_url }}" class="button orange">{{ link_text }}</a>
+			</div>
+
+	</div>
+</body>

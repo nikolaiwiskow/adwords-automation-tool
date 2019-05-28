@@ -1,0 +1,250 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300";
+body {
+  background-color: #EBEBEB;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.link {
+  text-decoration: none;
+  color: #3498DB;
+}
+
+.huckbit {
+  margin-top: 6.66667%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.doc-title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 3em;
+  color: #3498DB;
+}
+
+container {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  margin-left: 8.33333%;
+  margin-top: 1.66667%;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  background: #eee;
+  border-radius: 50%;
+  position: relative;
+  margin: 40px;
+  display: inline-block;
+}
+.spinner:after, .spinner:before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.spinner__1::after {
+  position: absolute;
+  border: 4px solid transparent;
+  border-top-color: #2ECC71;
+  border-bottom-color: #2ECC71;
+  top: -4px;
+  left: -4px;
+  animation: spin 2s linear infinite;
+}
+.spinner__1::before {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  height: 35px;
+  width: 35px;
+  background-color: #1ABC9C;
+  animation: shrink 3s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.spinner__2 {
+  background-color: #F43059;
+}
+.spinner__2:after {
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 26px;
+  left: 18px;
+  transform-origin: top 50%;
+  animation: shrinkFull 3s linear infinite;
+}
+.spinner__2:before {
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 26px;
+  left: 36px;
+  transform-origin: top 50%;
+  animation: shrinkFull 3s linear infinite;
+}
+
+@keyframes shrinkFull {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(4.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.spinner__3 {
+  background: RGBA(155, 89, 182, 0.5);
+}
+.spinner__3:after {
+  width: 50px;
+  height: 50px;
+  background: #3498DB;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  animation: move-left 2s ease infinite;
+}
+.spinner__3:before {
+  width: 50px;
+  height: 50px;
+  background: #2C3E50;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  animation: move-right 2s ease infinite;
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(20px) scale(1.2);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes move-right {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px) scale(1.2);
+    background: #3498DB;
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.pacman {
+  position: absolute;
+}
+.pacman .track {
+  border-top: 8px dotted #eee;
+  height: 0;
+  position: relative;
+  width: 150px;
+  left: 600px;
+  top: -92px;
+}
+
+.spinner__4 {
+  background: transparent;
+}
+.spinner__4 span {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  position: absolute;
+  border-radius: 50%;
+  top: 15px;
+  left: 35px;
+}
+.spinner__4:before, .spinner__4:after {
+  display: block;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  border: 35px solid #FFCC00;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: chunk-top 1s ease infinite;
+}
+.spinner__4:after {
+  border: 35px solid #FFCC00;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: chunk-bottom 1s ease infinite;
+}
+
+@keyframes chunk-top {
+  0%, 100% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-80deg);
+  }
+}
+@keyframes chunk-bottom {
+  0%, 100% {
+    transform: rotate(-40deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}

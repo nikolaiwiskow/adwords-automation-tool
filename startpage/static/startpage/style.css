@@ -1,0 +1,77 @@
+body, .acrylic::before {
+  background: #333 url("../structure/images/road.jpg") fixed center;
+  background-size: cover;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#h1, #h3 {
+	margin-top: 0px;
+	padding-top: 24px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 8px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#h1 {
+	font-size: 44px;
+}
+
+h2 {
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 8px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.card {
+	position: relative;
+	width: 240px;
+	height: 320px;
+	border-radius: 3px;
+	margin: 0 auto;
+	padding: 15px;
+
+	-webkit-animation: fadeIn 0.22s;
+	animation: fadeIn 0.22s;
+}
+
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 0.96;}
+}
+
+.go-button {
+	position: absolute;
+	bottom: 15px;
+	margin: 0 auto;
+	right: 15px;
+	padding: 10px;
+	width: 210px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+    background-size: 200% auto;
+    color: black;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25), 0 1px 8px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.go-button:hover {
+  background-position: right center; /* change the direction of the change here */
+  text-decoration: none;
+}
+
+.go-button:active {
+	box-shadow: 0 0 0px;
+}
+
+#row {
+	margin-left: 0;
+	margin-right: 0;
+}

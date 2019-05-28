@@ -1,0 +1,84 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% load static %}
+
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/startpage/style.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'structure/css/acrylic.css' %}" />
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="headlines">
+		<h1 id="h1">Wall-E</h1>
+		<h3 id="h3" class="text-center">beta</h3>
+	</div>
+	<div style="height:100px"></div>
+
+	<div id="row" class="row">
+
+		<div class="col-sm-4">
+			<div id="testy3" class="acrylic shadow card">
+				<div style="height: 50%; border-style: solid; border-width: 0px 0px 1px 0px; border-color: #A19B99">
+					<h2>Structure</h2>
+				</div>
+				<p>SQR+ and account structuring for the new structure concept.</p>
+				<a role="button" href="/structure" class="go-button">Go</a>
+			</div>		
+		</div>
+
+		<div class="col-sm-4">
+			<div id="testy3" class="acrylic shadow card">
+				<div style="height: 50%; border-style: solid; border-width: 0px 0px 1px 0px; border-color: #A19B99">
+					<h2>Tag Analysis</h2>
+				</div>
+				<p>Performance per Tag</p>
+				<a role="button" href="/taganalysis" class="go-button">Go</a>
+			</div>		
+		</div>
+
+		<div class="col-sm-4">
+			<div id="testy3" class="acrylic shadow card">
+				<div style="height: 50%; border-style: solid; border-width: 0px 0px 1px 0px; border-color: #A19B99">
+					<h2>Voluum Reports</h2>
+				</div>
+				<p>Merged reports for external offers</p>
+				<a role="button" href="/voluum" class="go-button">Go</a>
+			</div>		
+		</div>
+
+	</div>
+
+
+</body>
+
+
+
+
+
+
+<!-- Datepicker & JQuery -->
+<script type="text/javascript" src="{% static 'procreate/js/datepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'procreate/js/jquery.js' %}"></script>
+
+<!-- Acrylic -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+</svg>
